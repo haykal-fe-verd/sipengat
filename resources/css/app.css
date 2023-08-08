@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 640px) {
+    .pagination-button {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin: 2px;
+    }
+}
+
+.print-table {
+    display: none;
+}
+
+@media print {
+    .page-break {
+        page-break-before: always;
+    }
+    table {
+        page-break-inside: auto;
+    }
+    @page {
+        size: auto;
+        margin: 20mm 0 0 0;
+    }
+
+    @page :first {
+        margin: 0;
+    }
+    body {
+        margin: 0;
+    }
+
+    .print-table {
+        display: block;
+    }
+}
