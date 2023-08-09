@@ -145,41 +145,41 @@ function Dashboard(props) {
             <Head title="Dashboard" />
             <AppLayout>
                 <div className="w-full p-4 bg-white">
-                    <div className="text-center text-orange-400 font-bold">
+                    <div className="font-bold text-center text-orange-400">
                         <h2>Selamat Datang {auth.user.name}!</h2>
                     </div>
                 </div>
                 {auth.user.role === "divisi" && (
                     <>
                         <div className="w-full mt-4">
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total Permintaan
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalPermintaanDivisi}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Permintaan Diterima
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalPermintaanDiterimaDivisi}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Permintaan Ditolak
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalPermintaanDitolakDivisi}
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full p-4 bg-white mt-4 overflow-auto">
+                        <div className="w-full p-4 mt-4 overflow-auto bg-white">
                             <h2 className="font-bold">
                                 Grafik Total Permintaan Tahunan
                             </h2>
@@ -196,77 +196,69 @@ function Dashboard(props) {
                 {auth.user.role === "logistik" && (
                     <>
                         <div className="w-full mt-4">
-                            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                            <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total Divisi
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalDivisi}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total Satuan
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalSatuan}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total Kategori
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalKategori}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
-                                        Total Supplier
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
+                                        Total Permintaan
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
-                                        {props.totalSupplier}
+                                    <p className="text-lg font-bold text-orange-500">
+                                        {props.totalPermintaan}
                                     </p>
                                 </div>
                             </div>
                             {/*  */}
-                            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4">
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                            <div className="grid grid-cols-1 gap-4 mt-4 lg:grid-cols-3">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total Pemasukan
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalPemasukan}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total Keluar
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalPengeluaran}
                                     </p>
                                 </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
                                         Total ATK
                                     </h4>
-                                    <p className="font-bold text-lg text-orange-500">
+                                    <p className="text-lg font-bold text-orange-500">
                                         {props.totalDataAtk}
-                                    </p>
-                                </div>
-                                <div className="w-full p-4 bg-white flex flex-col gap-3 justify-start">
-                                    <h4 className="font-bold text-2xl">
-                                        Total Supplier
-                                    </h4>
-                                    <p className="font-bold text-lg text-orange-500">
-                                        {props.totalSupplier}
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full p-4 bg-white mt-4 overflow-auto">
+                        <div className="w-full p-4 mt-4 overflow-auto bg-white">
                             <h2 className="font-bold">
                                 Grafik Pemasukan dan Pengeluaran Tahun{" "}
                                 {new Date().getFullYear()}

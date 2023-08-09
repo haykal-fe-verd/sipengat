@@ -58,6 +58,7 @@ class DashboardController extends Controller
         $totalSatuan = Satuan::count();
         $totalKategori = Kategori::count();
         $totalSupplier = Supplier::count();
+        $totalPermintaan = Permintaan::count();
         $totalPemasukan = Pemasukan::count();
         $totalPengeluaran = Pengeluaran::count();
         $totalSupplier = Supplier::count();
@@ -101,6 +102,7 @@ class DashboardController extends Controller
             'totalDataAtk' => $totalDataAtk,
             'chartPemasukan' => $chartPemasukan,
             'chartPengeluaran' => $chartPengeluaran,
+            'totalPermintaan' => $totalPermintaan
         ]);
     }
 }
