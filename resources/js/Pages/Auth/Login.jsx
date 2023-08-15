@@ -178,7 +178,7 @@ function Login({ status }) {
                             Belum punya akun?{" "}
                             <Link
                                 href={route("register")}
-                                className="hover:text-blue-500"
+                                className="text-blue-500"
                             >
                                 klik disini
                             </Link>

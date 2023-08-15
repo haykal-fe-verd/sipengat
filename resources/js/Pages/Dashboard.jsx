@@ -231,7 +231,7 @@ function Dashboard(props) {
                                 </div>
                             </div>
                             {/*  */}
-                            <div className="grid grid-cols-1 gap-4 mt-4 lg:grid-cols-3">
+                            <div className="grid grid-cols-1 gap-4 mt-4 lg:grid-cols-4">
                                 <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
                                     <h4 className="text-2xl font-bold">
                                         Total Pemasukan
@@ -254,6 +254,14 @@ function Dashboard(props) {
                                     </h4>
                                     <p className="text-lg font-bold text-orange-500">
                                         {props.totalDataAtk}
+                                    </p>
+                                </div>
+                                <div className="flex flex-col justify-start w-full gap-3 p-4 bg-white">
+                                    <h4 className="text-2xl font-bold">
+                                        Total Supplier
+                                    </h4>
+                                    <p className="text-lg font-bold text-orange-500">
+                                        {props.totalSupplier}
                                     </p>
                                 </div>
                             </div>

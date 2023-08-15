@@ -24,20 +24,18 @@ class RegisterController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'divisi_id' => 'required',
             'role' => 'required',
-        ], [
-            'divisi_id.required' => 'Pilih salah satu divisi dari opsi yang tersedia.'
         ]);
 
         User::create([
+            'divisi_id' => $request->divisi_id,
+            'role' => $request->role,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
-            'divisi_id' => $request->divisi_id,
         ]);
 
         return redirect()->route('login')->with('status', 'Pendaftaran akun berhasil');

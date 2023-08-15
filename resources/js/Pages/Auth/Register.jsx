@@ -4,14 +4,12 @@ import GuestLayout from "@/layouts/GuestLayout";
 import Logo from "@/assets/Logo.png";
 import InputLabel from "@/components/InputLabel";
 import TextInput from "@/components/TextInput";
-import Checkbox from "@/components/Checkbox";
 import ButtonPrimary from "@/components/ButtonPrimary";
 import InputError from "@/components/InputError";
 import Select from "react-select";
 import Swal from "sweetalert2";
 
 function Register({ status, divisi }) {
-    console.log("🚀  divisi:", divisi);
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
@@ -51,6 +49,8 @@ function Register({ status, divisi }) {
         { value: "logistik", label: "Logistik" },
         { value: "divisi", label: "Divisi" },
     ];
+
+    console.log(data.divisi_id);
 
     return (
         <>
@@ -223,7 +223,7 @@ function Register({ status, divisi }) {
                             Sudah punya akun?{" "}
                             <Link
                                 href={route("login")}
-                                className="hover:text-blue-500"
+                                className="text-blue-500"
                             >
                                 klik disini
                             </Link>
