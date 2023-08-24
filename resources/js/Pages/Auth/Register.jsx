@@ -15,7 +15,6 @@ function Register({ status, divisi }) {
         email: "",
         password: "",
         divisi_id: "",
-        role: "",
     });
 
     React.useEffect(() => {
@@ -44,13 +43,6 @@ function Register({ status, divisi }) {
         value: item.id,
         label: item.nama_divisi,
     }));
-
-    const optionsRole = [
-        { value: "logistik", label: "Logistik" },
-        { value: "divisi", label: "Divisi" },
-    ];
-
-    console.log(data.divisi_id);
 
     return (
         <>
@@ -164,27 +156,6 @@ function Register({ status, divisi }) {
                                         <InputError
                                             message={errors.divisi_id}
                                         />
-                                    </div>
-
-                                    {/* divisi */}
-                                    <div>
-                                        <InputLabel
-                                            htmlFor="role"
-                                            value="Role"
-                                        />
-                                        <Select
-                                            name="role"
-                                            id="role"
-                                            options={optionsRole}
-                                            placeholder="Pilih role"
-                                            onChange={(selectedOption) =>
-                                                setData(
-                                                    "role",
-                                                    selectedOption.value
-                                                )
-                                            }
-                                        />
-                                        <InputError message={errors.role} />
                                     </div>
 
                                     {/* button */}

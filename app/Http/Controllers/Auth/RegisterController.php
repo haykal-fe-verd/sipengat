@@ -27,16 +27,26 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'divisi_id' => 'required',
-            'role' => 'required',
         ]);
 
-        User::create([
-            'divisi_id' => $request->divisi_id,
-            'role' => $request->role,
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if ($request->divisi_id === 1) {
+            User::create([
+                'divisi_id' => $request->divisi_id,
+                'role' => 'logistik',
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+        } else {
+            User::create([
+                'divisi_id' => $request->divisi_id,
+                'role' => 'divisi',
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+        }
+
 
         return redirect()->route('login')->with('status', 'Pendaftaran akun berhasil');
     }

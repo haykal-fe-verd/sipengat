@@ -52,21 +52,26 @@ class PermintaanController extends Controller
 
         try {
             $permintaan = Permintaan::findOrFail($id);
-            $permintaan->status = 'disetujui';
-            $permintaan->pesan = $request->pesan;
-            $permintaan->save();
-
             $dataAtk = DataAtk::findOrFail($permintaan->data_atk_id);
-            $dataAtk->stok -= $permintaan->jumlah;
-            $dataAtk->save();
 
-            $pengeluaran = new Pengeluaran;
-            $pengeluaran->jenis_atk = $dataAtk->pemasukan->jenis_atk;
-            $pengeluaran->jumlah_keluar = $permintaan->jumlah;
-            $pengeluaran->nama_satuan = $dataAtk->pemasukan->satuan->nama_satuan;
-            $pengeluaran->save();
+            if ($permintaan->jumlah > $dataAtk->stok) {
+                return redirect()->route('permintaan.index')->with('error', 'Stok tidak mencukupi, silahkan re order atau tambah stok ATK terlebih dahulu');
+            } else {
+                $permintaan->status = 'disetujui';
+                $permintaan->pesan = $request->pesan;
+                $permintaan->save();
 
-            return redirect()->route('permintaan.index')->with('success', 'Permintaan berhasil diaccept');
+                $dataAtk->stok -= $permintaan->jumlah;
+                $dataAtk->save();
+
+                $pengeluaran = new Pengeluaran;
+                $pengeluaran->jenis_atk = $dataAtk->pemasukan->jenis_atk;
+                $pengeluaran->jumlah_keluar = $permintaan->jumlah;
+                $pengeluaran->nama_satuan = $dataAtk->pemasukan->satuan->nama_satuan;
+                $pengeluaran->save();
+
+                return redirect()->route('permintaan.index')->with('success', 'Permintaan berhasil diaccept');
+            }
         } catch (\Throwable $th) {
             return redirect()->route('permintaan.index')->with('error', "Opps something went wrong");
         }
