@@ -80,6 +80,7 @@ function Table({ data, handleEdit, handleDelete, handleShowDetail }) {
                     <tr className="text-white bg-gray-500 ">
                         <th className="w-10 px-6 py-3 text-center">#</th>
                         <th className="px-6 py-3">Jenis ATK</th>
+                        <th className="px-6 py-3">Deskripsi</th>
                         <th className="px-6 py-3">Jumlah</th>
                         <th className="px-6 py-3">Tanggal</th>
                         <th className="w-32 px-6 py-3 text-center">@</th>
@@ -107,6 +108,9 @@ function Table({ data, handleEdit, handleDelete, handleShowDetail }) {
                                     </td>
                                     <td className="px-6 py-3">
                                         {item.data_atk.pemasukan.jenis_atk}
+                                    </td>
+                                    <td className="px-6 py-3">
+                                        {item.deskripsi}
                                     </td>
                                     <td className="px-6 py-3">
                                         {item.jumlah}{" "}

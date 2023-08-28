@@ -176,19 +176,19 @@ function Permintaan() {
                                                 :{" "}
                                                 {detailData.status ===
                                                     "menunggu" && (
-                                                    <span className="py-1 px-3 rounded-md bg-yellow-300  text-white">
+                                                    <span className="px-3 py-1 text-white bg-yellow-300 rounded-md">
                                                         {detailData.status}
                                                     </span>
                                                 )}
                                                 {detailData.status ===
                                                     "disetujui" && (
-                                                    <span className="py-1 px-3 rounded-md bg-sky-500  text-white">
+                                                    <span className="px-3 py-1 text-white rounded-md bg-sky-500">
                                                         {detailData.status}
                                                     </span>
                                                 )}
                                                 {detailData.status ===
                                                     "ditolak" && (
-                                                    <span className="py-1 px-3 rounded-md bg-rose-500  text-white">
+                                                    <span className="px-3 py-1 text-white rounded-md bg-rose-500">
                                                         {detailData.status}
                                                     </span>
                                                 )}
@@ -236,6 +236,29 @@ function Permintaan() {
                                     {errors.data_atk_id && (
                                         <InputError
                                             message={errors.data_atk_id}
+                                        />
+                                    )}
+                                </div>
+
+                                <div className="mb-5">
+                                    <InputLabel
+                                        htmlFor="deskripsi"
+                                        value="Deskripsi"
+                                    />
+
+                                    <TextInput
+                                        id="deskripsi"
+                                        type="text"
+                                        name="deskripsi"
+                                        isFocused={true}
+                                        value={data.deskripsi}
+                                        onChange={(e) =>
+                                            setData("deskripsi", e.target.value)
+                                        }
+                                    />
+                                    {errors.deskripsi && (
+                                        <InputError
+                                            message={errors.deskripsi}
                                         />
                                     )}
                                 </div>

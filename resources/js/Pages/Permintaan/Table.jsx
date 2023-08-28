@@ -79,6 +79,7 @@ function Table({ data, onAcceptClick, onRefuseClick }) {
                         <th className="px-6 py-3">Divisi</th>
                         <th className="px-6 py-3">Jenis ATK</th>
                         <th className="px-6 py-3">Jumlah</th>
+                        <th className="px-6 py-3">Deskripsi</th>
                         <th className="px-6 py-3">Tanggal</th>
                         <th className="w-32 px-6 py-3 text-center">@</th>
                     </tr>
@@ -120,6 +121,9 @@ function Table({ data, onAcceptClick, onRefuseClick }) {
                                         }
                                     </td>
                                     <td className="px-6 py-3">
+                                        {item.deskripsi}
+                                    </td>
+                                    <td className="px-6 py-3">
                                         {moment(item.created_at).format(
                                             "DD-MM-YYYY"
                                         )}
@@ -149,12 +153,12 @@ function Table({ data, onAcceptClick, onRefuseClick }) {
                                             </>
                                         )}
                                         {item.status === "disetujui" && (
-                                            <span className="bg-sky-500 text-nowrap px-2  py-1 text-xs text-center rounded-md">
+                                            <span className="px-2 py-1 text-xs text-center rounded-md bg-sky-500 text-nowrap">
                                                 Disetujui
                                             </span>
                                         )}
                                         {item.status === "ditolak" && (
-                                            <span className="bg-rose-500 text-nowrap px-2  py-1 text-xs text-center rounded-md">
+                                            <span className="px-2 py-1 text-xs text-center rounded-md bg-rose-500 text-nowrap">
                                                 Ditolak
                                             </span>
                                         )}

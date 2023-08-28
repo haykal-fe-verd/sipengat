@@ -133,6 +133,7 @@ class PermintaanController extends Controller
     {
         $request->validate([
             'data_atk_id' => 'required|integer',
+            'deskripsi' => 'required',
             'jumlah' => 'required|integer',
         ]);
 
@@ -140,6 +141,7 @@ class PermintaanController extends Controller
             $permintaan = new Permintaan;
             $permintaan->user_id = Auth::user()->id;
             $permintaan->data_atk_id = $request->data_atk_id;
+            $permintaan->deskripsi = $request->deskripsi;
             $permintaan->jumlah = $request->jumlah;
             $permintaan->save();
 
@@ -153,12 +155,14 @@ class PermintaanController extends Controller
     {
         $request->validate([
             'data_atk_id' => 'required|integer',
+            'deskripsi' => 'required',
             'jumlah' => 'required|integer',
         ]);
 
         try {
             $permintaan = Permintaan::findOrFail($id);
             $permintaan->data_atk_id = $request->data_atk_id;
+            $permintaan->deskripsi = $request->deskripsi;
             $permintaan->jumlah = $request->jumlah;
             $permintaan->save();
 
