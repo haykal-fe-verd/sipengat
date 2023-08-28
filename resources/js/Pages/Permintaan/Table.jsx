@@ -111,12 +111,13 @@ function Table({ data, onAcceptClick, onRefuseClick }) {
                                         {item.user.divisi.nama_divisi}
                                     </td>
                                     <td className="px-6 py-3">
-                                        {item.data_atk.pemasukan.jenis_atk}
+                                        {item.data_atk?.pemasukan?.jenis_atk ??
+                                            "-"}
                                     </td>
                                     <td className="px-6 py-3">
                                         {item.jumlah}{" "}
                                         {
-                                            item.data_atk.pemasukan.satuan
+                                            item.data_atk?.pemasukan?.satuan
                                                 .nama_satuan
                                         }
                                     </td>

@@ -138,10 +138,8 @@ function Permintaan() {
                                             </td>
                                             <td className="px-6 py-3">
                                                 :{" "}
-                                                {
-                                                    detailData.data_atk
-                                                        .pemasukan.jenis_atk
-                                                }
+                                                {detailData?.data_atk?.pemasukan
+                                                    .jenis_atk ?? "-"}
                                             </td>
                                         </tr>
                                         <tr className="px-6 py-3">
@@ -152,8 +150,8 @@ function Permintaan() {
                                                 : {detailData.jumlah}{" "}
                                                 {
                                                     detailData.data_atk
-                                                        .pemasukan.satuan
-                                                        .nama_satuan
+                                                        ?.pemasukan.satuan
+                                                        ?.nama_satuan
                                                 }
                                             </td>
                                         </tr>

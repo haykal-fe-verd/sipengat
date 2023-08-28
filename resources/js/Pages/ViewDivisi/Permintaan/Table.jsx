@@ -107,7 +107,8 @@ function Table({ data, handleEdit, handleDelete, handleShowDetail }) {
                                         {data.from + index}
                                     </td>
                                     <td className="px-6 py-3">
-                                        {item.data_atk.pemasukan.jenis_atk}
+                                        {item.data_atk?.pemasukan?.jenis_atk ??
+                                            "-"}
                                     </td>
                                     <td className="px-6 py-3">
                                         {item.deskripsi}
@@ -115,7 +116,7 @@ function Table({ data, handleEdit, handleDelete, handleShowDetail }) {
                                     <td className="px-6 py-3">
                                         {item.jumlah}{" "}
                                         {
-                                            item.data_atk.pemasukan.satuan
+                                            item.data_atk?.pemasukan?.satuan
                                                 .nama_satuan
                                         }
                                     </td>
