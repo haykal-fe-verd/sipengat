@@ -144,7 +144,7 @@ class PermintaanController extends Controller
     {
         $request->validate([
             'data_atk_id' => 'nullable|integer',
-            'deskripsi' => 'required',
+            'deskripsi' => 'nullable',
             'jumlah' => 'required|integer',
         ]);
 
@@ -166,7 +166,7 @@ class PermintaanController extends Controller
     {
         $request->validate([
             'data_atk_id' => 'nullable|integer',
-            'deskripsi' => 'required',
+            'deskripsi' => 'nullable',
             'jumlah' => 'required|integer',
         ]);
 
