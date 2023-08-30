@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('tb_permintaan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('data_atk_id')->nullable();
+            $table->unsignedBigInteger('data_atk_id');
             $table->integer('jumlah');
-            $table->text('deskripsi');
             $table->text('pesan')->nullable();
             $table->enum('status', ['menunggu', 'disetujui', 'ditolak'])->default('menunggu');
             $table->timestamps();

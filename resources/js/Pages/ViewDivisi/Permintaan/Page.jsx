@@ -240,29 +240,6 @@ function Permintaan() {
 
                                 <div className="mb-5">
                                     <InputLabel
-                                        htmlFor="deskripsi"
-                                        value="Deskripsi"
-                                    />
-
-                                    <TextInput
-                                        id="deskripsi"
-                                        type="text"
-                                        name="deskripsi"
-                                        isFocused={true}
-                                        value={data.deskripsi}
-                                        onChange={(e) =>
-                                            setData("deskripsi", e.target.value)
-                                        }
-                                    />
-                                    {errors.deskripsi && (
-                                        <InputError
-                                            message={errors.deskripsi}
-                                        />
-                                    )}
-                                </div>
-
-                                <div className="mb-5">
-                                    <InputLabel
                                         htmlFor="jumlah"
                                         value="Jumlah"
                                     />
