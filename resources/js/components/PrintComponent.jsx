@@ -12,6 +12,36 @@ const PrintComponent = React.forwardRef((props, ref) => {
         sampai_tanggal,
     } = props;
 
+    const [currentTime, setCurrentTime] = React.useState(new Date());
+    const [currentDate, setCurrentDate] = React.useState(new Date());
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTime(new Date());
+            setCurrentDate(new Date());
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
+    const options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    };
+    const currentDateFormatted = currentDate.toLocaleDateString(
+        "id-ID",
+        options
+    );
+
+    const currentTimeFormatted = currentTime.toLocaleTimeString("id-ID", {
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+
     return (
         <div ref={ref} className="print-table">
             <Kop />
@@ -110,6 +140,20 @@ const PrintComponent = React.forwardRef((props, ref) => {
                                   )}
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div className="signature-container">
+                <div className="text-center ">
+                    <p>Banda Aceh, {currentDateFormatted}</p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <p className="font-bold underline uppercase">
+                        T.FAISAL NOOR HIDAYAD
+                    </p>
+                    <p>NIP. 197704112009101001</p>
                 </div>
             </div>
         </div>
